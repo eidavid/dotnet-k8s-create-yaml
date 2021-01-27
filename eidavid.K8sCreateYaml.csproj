@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <OutputType>Library</OutputType>
+    <StartupObject></StartupObject>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Description>Generate kubernetes yaml code(deployment, service and cronjob)</Description>
+    <RepositoryUrl>https://github.com/eidavid/dotnet-k8s-create-yaml</RepositoryUrl>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/eidavid/dotnet-k8s-create-yaml</PackageProjectUrl>
+    <RepositoryType>net5.0</RepositoryType>
+    <PackageTags>net5,kubernetes,k8s</PackageTags>
+    <PackageReleaseNotes>Init nuget</PackageReleaseNotes>
+    <Authors>Carlos David Verdugo Leon @eidavid</Authors>
+    <Copyright>@eidavid</Copyright>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="deployment.tpl" />
+    <None Remove="Templates\cronjob.tpl" />
+    <None Remove="Templates\svc.tpl" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Templates\cronjob.tpl" />
+    <EmbeddedResource Include="Templates\deployment.tpl" />
+    <EmbeddedResource Include="Templates\svc.tpl" />
+  </ItemGroup>
+
+</Project>
